@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - main
-      - claude/isete-water-fountain-app-2pavc1
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 # Allow the workflow to publish to GitHub Pages.
@@ -37,18 +39,23 @@ jobs:
       - name: Build
         run: npm run build
 
+      # Only needed to actually publish — skip on PR builds, which only
+      # validate that the app builds.
       - name: Setup Pages
+        if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
         with:
           enablement: true
 
       - name: Upload artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
   deploy:
     needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
