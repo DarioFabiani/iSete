@@ -2,9 +2,10 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
-// The repo is served from https://dariofabiani.github.io/isete/, so the app
-// lives under the "/isete/" base path. start_url/scope below must match.
-const BASE = '/isete/'
+// The repo is served from https://DarioFabiani.github.io/iSete/, so the app
+// lives under the "/iSete/" base path (case-sensitive: it must match the repo
+// name exactly, or every asset 404s). start_url/scope below must match.
+const BASE = '/iSete/'
 
 export default defineConfig({
   base: BASE,
