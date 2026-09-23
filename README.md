@@ -30,7 +30,7 @@ React + Vite · Leaflet (react-leaflet) · Overpass API · vite-plugin-pwa
 
 ```bash
 npm install
-npm run dev      # http://localhost:5173/isete/
+npm run dev      # http://localhost:5173/iSete/
 ```
 
 Build e anteprima di produzione (necessaria per testare il service worker):
@@ -47,9 +47,9 @@ Il push su `main` (o sul branch di sviluppo) attiva il workflow
 
 **Configurazione una tantum:** nelle impostazioni del repository → *Pages*,
 imposta *Source* su **GitHub Actions**. L'app sarà raggiungibile su
-`https://dariofabiani.github.io/isete/`.
+`https://dariofabiani.github.io/iSete/`.
 
-> L'app è servita sotto il path `/isete/`: vedi `base` in `vite.config.js`.
+> L'app è servita sotto il path `/iSete/` (maiuscole/minuscole contano, deve coincidere col nome del repo): vedi `base` in `vite.config.js`.
 
 ## Dati
 
